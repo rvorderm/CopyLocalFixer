@@ -68,6 +68,7 @@ namespace CopyLocalFixer
 	        {
 		        wasChanged = wasChanged || RewriteOutputPaths(relativePath, doc);
 	        }
+	        wasChanged = wasChanged || OrmRemover.Instance.StripOrmTags(doc);
 	        if (wasChanged)
             {
                 StripReadonlyIfSet(fullCsprojPath);
