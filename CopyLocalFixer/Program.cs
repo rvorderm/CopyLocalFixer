@@ -20,7 +20,10 @@ namespace CopyLocalFixer
 
         private static void Main(string[] args)
         {
-            if (args.Length != 2 || args[0] == "-h" || args[0] == "/?" || args[0] == "/h" ||
+#if DEBUG
+			args = new string[] { "/rewrite", "C:\\Repos\\Default\\Personnel\\Personnel.sln" };
+#endif
+			if (args.Length != 2 || args[0] == "-h" || args[0] == "/?" || args[0] == "/h" ||
                 args[0] != "/rewrite" && args[0] != "/restore")
             {
                 WriteUsage();
